@@ -1,0 +1,54 @@
+Urlaubsmeldung 1.3.0 für Zen Cart 1.5.7 deutsch
+
+Copyright 2016-2022 webchills (www.webchills.at)
+General Public License
+
+Wenn der Shopbetreiber mal Urlaub macht und in dieser Zeit Bestellungen möglich sein sollen, dann muss auf die längeren Lieferzeiten hingewiesen werden. 
+Ein allgemeiner Hinweis auf der Startseite reicht nicht und wird übersehen, ein Ändern aller Lieferzeitangaben bei jedem Artikel ist nicht praktikabel.
+Sinn macht daher ein Allgemeinverbindlicher Hinweis auf die längeren Lieferzeiten, siehe Punkt 3 hier:
+http://www.it-recht-kanzlei.de/betriebsurlaub-online-shop.html
+
+Dieses Modul zeigt den Hinweis auf allen Shopseiten als Warnmeldungen via Message Stack an, also dort wo normalerweise Warn-, Fehler oder Erfolgsmeldungen erscheinen.
+Der Text für die Urlaubsmeldung ist via Admin für deutsche und englische Version definierbar und die Meldung kann auch via Admin aus- und eingeschaltet werden.
+
+Changelog Version 1.3.0
+Februar 2022
+Anpassung für 1.5.7
+
+Changelog Version 1.2.0
+Juli 2020
+Anpassung für 1.5.6e
+
+Changelog Version 1.1.
+September 2019
+Anpassung für 1.5.6
+HTML kann in der Urlaubsmeldung erlaubt werden
+
+Installation:
+
+1)
+Im Ordner SQL die install.sql mit einem Texteditor öffnen, Inhalt kopieren und ins Eingabefeld unter Tools > SQL Patches installieren einfügen und absenden
+
+2)
+Im Ordner NEUE DATEIEN den Ordner DEINADMIN auf den Namen des Adminverzeichnisses umbenennen und den Inhalt in der vorgegebenen Struktur hochladen, es werden dabei keine bestehenden Dateien überschrieben.
+
+3)
+Unter Konfiguration ist nun der neue Menüpunkt Urlaubsmeldung vorhanden. Hier Texte wie gewünscht einstellen und wenn benötigt einschalten.
+
+Wichtig:
+
+Wenn Sie in den Texten der Urlaubsmeldung mit HTML arbeiten wollen, dann ändern Sie in der DEINADMIN/includes/extra_datafiles/urlaubsmeldung_sanitizer.php
+von
+define('URLAUBSMELDUNG_ALLOW_HTML','false');
+auf
+define('URLAUBSMELDUNG_ALLOW_HTML','true');
+
+Es werden sonst beim Speichern solcher Texte Zeichen wie <br/> zu &lt;br/&gt; umgeschrieben
+
+
+Deinstallation
+
+Die hochgeladene includes/init_includes/overrides/init_header.php vom Server löschen.
+Dadurch wird wieder die Originaldatei includes/init_includes/init_header.php verwendet
+Alle anderen von diesem Modul hochgeladenen neuen Dateien ebenfalls löschen
+Im Ordner SQL die uninstall.sql mit einem Texteditor öffnen, Inhalt kopieren und ins Eingabefeld unter Tools > SQL Patches installieren einfügen und absenden
