@@ -24,6 +24,17 @@ September 2019
 Anpassung für 1.5.6
 HTML kann in der Urlaubsmeldung erlaubt werden
 
+
+getestet mit:
+
+Zen Cart Verrsion:
+1.5.7 deutsch
+
+PHP Version:
+8.0.x
+7.4.x
+
+
 Installation:
 
 1)
